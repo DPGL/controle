@@ -1,0 +1,44 @@
+
+1)
+SELECT * FROM routes
+
+2)
+SELECT * FROM routes
+WHERE route_type = 1
+
+3)
+SELECT route_short_name, route_desc FROM routes
+WHERE route_id = '11821949021891625'
+
+4)
+SELECT * FROM calendar
+WHERE sunday = 1
+
+5)
+SELECT COUNT(*) FROM routes
+
+6)
+SELECT trip_headsign, r.route_id, r.route_short_name, r.route_long_name, r.route_desc, r.route_type FROM trips AS t
+JOIN routes AS r ON r.route_id = t.route_id
+
+7)
+ça ne fonctionne pas car le service_id 123456789 n'existe pas dans la table calendar
+
+8)
+UPDATE calendar
+SET sunday = 1
+WHERE service_id = '4503599629230145'
+
+9)
+INSERT INTO routes (route_id, route_short_name, route_long_name, route_desc, route_type)
+VALUES ('0611104132', 'T2', 'Aéroport / Palais de justice de Toulouse', 'Ligne Aéroport / Palais de justice de Toulouse', 0)
+
+
+	CREATION D'UN SCHEMA
+	
+3)
+SELECT a.nom, p.nom, p.prenom FROM animal AS a
+JOIN proprietaire AS p ON p.id_proprio = a.id_proprio
+WHERE traitement = true
+
+
